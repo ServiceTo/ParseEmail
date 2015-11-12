@@ -1,0 +1,24 @@
+{
+	"name": "service-to/parse-email",
+	"type": "library",
+	"description": "Library to parse the body of a message and separate its parts.",
+	"keywords": ["email", "parse", "mail"],
+	"homepage": "https://github.com/ServiceTo/ParseEmail",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Ian Service",
+			"email": "ian@service.to",
+			"homepage": "https://ian.service.to",
+			"role": "Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"ServiceTo\\": "src"
+		}
+	}
+}
