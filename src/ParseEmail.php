@@ -1,8 +1,6 @@
 <?php
 	namespace ServiceTo;
 
-	use Exception;
-
 	class ParseEmail {
 		/**
 		 * Parse Email into parts and return jsonapi-style array
@@ -210,6 +208,22 @@
 		public function findPlainText($parsedEmail) {
 			return $this->find($parsedEmail, "text/plain");
 		}
+
+		/**
+		 * Return the header specified from within the message headers.
+		 *
+		 * @param  array  $parsedEmail  email parsed by parse() function
+		 * @param  string $header       header to return.
+		 * @return string
+		 */
+		public function getHeader($parsedEmail, $header) {
+			if (isset($parsedEmail["data"]["attributes"]["headers"][$header])) {
+				return $parsedEmail["data"]["attributes"]["headers"][$header];
+			}
+			return "";
+		}
+
+
 
 		/**
 		 * Decode the part using it's encoding header
